@@ -7,7 +7,7 @@ The insertL1 function is responsible for inserting memory blocks into the L1 cac
 
 The insertL2 function inserts memory blocks into the L2 cache. Similar to L1 it first checks for duplicates and if the cache is full the oldest block is removed and moved to the L3 cache. This creates a hierarchical type movement of data between cache levels.
 
-The insertL3 function handles insertion into the L3 cache. If L3 becomes full the oldest memory block is permanently removed from the cache hierarchy. 
+The insertL3 function handles insertion into the L3 cache. If L3 becomes full the oldest memory block is permanently removed from the cache hierarchy. All the memory block replacement takes place by FIFO principle. 
 
 Now, the access function simulates memory access. Whenever a task requests a memory block the function checks whether it exists in L1, L2, or L3 cache. If found, the corresponding cache hit latency is returned. If the block is not found in any cache level or  a RAM miss occurs, the RAM access counter is incremented, and the block is inserted into L1 cache. This function adresses cache hit and miss behavior and also promotes frequently accessed data to higher cache levels.
 
